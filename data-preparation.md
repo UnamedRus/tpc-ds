@@ -7,9 +7,13 @@
 ```bash
 git clone https://github.com/Altinity/tpc-ds.git
 cd tpc-ds
+cd bin
 
-./bin/build-tool.sh
-./bin/generate-data.sh 100 # 100 is scale
+./build-tool.sh
+
+rm -rf ../data
+
+./generate-data.sh 100 # 100 is scale
 
 clickhouse-client -mn < schema/tpcds.sql
 
